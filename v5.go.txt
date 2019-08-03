@@ -1,0 +1,166 @@
+package main
+
+type Foo struct {
+	Armature []struct {
+		Animation []struct {
+			Bone []struct {
+				Frame []struct {
+					Curve     []int64 `json:"curve"`
+					Duration  int64   `json:"duration"`
+					Transform struct {
+						ScX int64 `json:"scX"`
+						ScY int64 `json:"scY"`
+						SkX int64 `json:"skX"`
+						SkY int64 `json:"skY"`
+						X   int64 `json:"x"`
+						Y   int64 `json:"y"`
+					} `json:"transform"`
+					TweenEasing int64 `json:"tweenEasing"`
+					TweenType   int64 `json:"tweenType"`
+				} `json:"frame"`
+				Name   string `json:"name"`
+				Offset int64  `json:"offset"`
+				Scale  int64  `json:"scale"`
+			} `json:"bone"`
+			Duration int64 `json:"duration"`
+			Ffd      []struct {
+				Frame []struct {
+					Curve       []int64   `json:"curve"`
+					Duration    int64     `json:"duration"`
+					Offset      int64     `json:"offset"`
+					TweenEasing int64     `json:"tweenEasing"`
+					TweenType   int64     `json:"tweenType"`
+					Vertices    []float64 `json:"vertices"`
+				} `json:"frame"`
+				Name string `json:"name"`
+				Skin string `json:"skin"`
+				Slot string `json:"slot"`
+			} `json:"ffd"`
+			Frame []struct {
+				Actions  [][]string `json:"actions"`
+				Duration int64      `json:"duration"`
+				Events   []struct {
+					Bone    string    `json:"bone"`
+					Floats  []float64 `json:"floats"`
+					Ints    []int64   `json:"ints"`
+					Name    string    `json:"name"`
+					Slot    string    `json:"slot"`
+					Strings []string  `json:"strings"`
+				} `json:"events"`
+				Sound string `json:"sound"`
+			} `json:"frame"`
+			Name string `json:"name"`
+			Slot []struct {
+				Frame []struct {
+					Actions [][]string `json:"actions"`
+					Color   struct {
+						AM int64 `json:"aM"`
+						AO int64 `json:"aO"`
+						BM int64 `json:"bM"`
+						BO int64 `json:"bO"`
+						GM int64 `json:"gM"`
+						GO int64 `json:"gO"`
+						RM int64 `json:"rM"`
+						RO int64 `json:"rO"`
+					} `json:"color"`
+					Curve        []int64 `json:"curve"`
+					DisplayIndex int64   `json:"displayIndex"`
+					Duration     int64   `json:"duration"`
+					TweenEasing  int64   `json:"tweenEasing"`
+					TweenType    int64   `json:"tweenType"`
+				} `json:"frame"`
+				Name string `json:"name"`
+			} `json:"slot"`
+			ZOrder struct {
+				Frame []struct {
+					Duration int64   `json:"duration"`
+					ZOrder   []int64 `json:"zOrder"`
+				} `json:"frame"`
+			} `json:"zOrder"`
+		} `json:"animation"`
+		Bone []struct {
+			Name      string `json:"name"`
+			Parent    string `json:"parent"`
+			Transform struct {
+				ScX int64 `json:"scX"`
+				ScY int64 `json:"scY"`
+				SkX int64 `json:"skX"`
+				SkY int64 `json:"skY"`
+				X   int64 `json:"x"`
+				Y   int64 `json:"y"`
+			} `json:"transform"`
+			UserData interface{} `json:"userData"`
+		} `json:"bone"`
+		DefaultActions [][]string `json:"defaultActions"`
+		FrameRate      int64      `json:"frameRate"`
+		Ik             []struct {
+			BendPositive bool   `json:"bendPositive"`
+			Bone         string `json:"bone"`
+			Chain        int64  `json:"chain"`
+			Name         string `json:"name"`
+			Target       string `json:"target"`
+			Weight       int64  `json:"weight"`
+		} `json:"ik"`
+		Name string `json:"name"`
+		Skin []struct {
+			Name string `json:"name"`
+			Slot []struct {
+				Display []struct {
+					BonePose   []int64 `json:"bonePose"`
+					Color      int64   `json:"color"`
+					Height     int64   `json:"height"`
+					InheritFFD bool    `json:"inheritFFD"`
+					Name       string  `json:"name"`
+					Path       string  `json:"path"`
+					Pivot      struct {
+						X float64 `json:"x"`
+						Y float64 `json:"y"`
+					} `json:"pivot"`
+					Share     string  `json:"share"`
+					SlotPose  []int64 `json:"slotPose"`
+					SubType   string  `json:"subType"`
+					Transform struct {
+						ScX int64 `json:"scX"`
+						ScY int64 `json:"scY"`
+						SkX int64 `json:"skX"`
+						SkY int64 `json:"skY"`
+						X   int64 `json:"x"`
+						Y   int64 `json:"y"`
+					} `json:"transform"`
+					Triangles []int64 `json:"triangles"`
+					Type      string  `json:"type"`
+					Uvs       []int64 `json:"uvs"`
+					Vertices  []int64 `json:"vertices"`
+					Weights   []int64 `json:"weights"`
+					Width     int64   `json:"width"`
+				} `json:"display"`
+				Name string `json:"name"`
+			} `json:"slot"`
+		} `json:"skin"`
+		Slot []struct {
+			Actions   [][]string  `json:"actions"`
+			BlendMode interface{} `json:"blendMode"`
+			Color     struct {
+				AM int64 `json:"aM"`
+				AO int64 `json:"aO"`
+				BM int64 `json:"bM"`
+				BO int64 `json:"bO"`
+				GM int64 `json:"gM"`
+				GO int64 `json:"gO"`
+				RM int64 `json:"rM"`
+				RO int64 `json:"rO"`
+			} `json:"color"`
+			DisplayIndex int64       `json:"displayIndex"`
+			Name         string      `json:"name"`
+			Parent       string      `json:"parent"`
+			UserData     interface{} `json:"userData"`
+		} `json:"slot"`
+		Type     string      `json:"type"`
+		UserData interface{} `json:"userData"`
+	} `json:"armature"`
+	CompatibleVersion string      `json:"compatibleVersion"`
+	FrameRate         int64       `json:"frameRate"`
+	Name              string      `json:"name"`
+	UserData          interface{} `json:"userData"`
+	Version           string      `json:"version"`
+}

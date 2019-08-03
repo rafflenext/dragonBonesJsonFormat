@@ -1,0 +1,254 @@
+{
+    
+    "name": "dragonBonesName",
+    
+    "version": "4.5",
+    
+    "frameRate": 24,
+    
+    "isGlobal": 1,
+    
+    "armature": [{
+        
+        "name": "armatureName",
+        
+        "frameRate": 24,
+        
+        
+        "type": "Armature",
+        
+        "userData": null,
+        
+        "defaultActions": [
+            
+            ["gotoAndPlay", "animationName"],
+            
+            ["gotoAndStop", "animationName"]
+        ],
+        
+        "bone": [{
+            
+            "name": "boneName",
+            
+            "parent": "parentBoneName",
+            
+            "userData": null,
+            
+            "transform": {
+                "x": 0.00, 
+                "y": 0.00, 
+                "skX": 0.0000, 
+                "skY": 0.0000, 
+                "scX": 1.0000, 
+                "scY": 1.0000
+            }
+        }],
+        
+        "slot": [{
+            
+            "name": "slotName",
+            
+            "parent": "parentBoneName",
+            
+            "displayIndex": 0,
+            
+            "blendMode": null,
+            
+            "userData": null,
+            
+            "color": {
+                "aM": 100, 
+                "rM": 100, 
+                "gM": 100, 
+                "bM": 100, 
+                "aO": 0.00, 
+                "rO": 0.00, 
+                "gO": 0.00, 
+                "bO": 0.00
+            },
+            
+            "actions": [
+                
+                ["gotoAndPlay", "animationName"],
+                
+                ["gotoAndStop", "animationName"]
+            ]
+        }],
+        
+        "skin": [{
+            
+            "name": "skinName",
+            
+            "slot": [{
+                
+                "name": "slotName",
+                
+                "display": [{
+                    
+                    "name": "displayName",
+                    
+                    
+                    "type": "image",
+                    
+                    "transform": {
+                        "x": 0.00, 
+                        "y": 0.00, 
+                        "skX": 0.0000, 
+                        "skY": 0.0000, 
+                        "scX": 1.0000, 
+                        "scY": 1.0000
+                    },
+                    
+                    "pivot": {
+                        "x": 0.50, 
+                        "y": 0.50
+                    },
+                    
+                    
+                    "uvs": [0.0000, 0.0000, 1.0000, 0.0000, 1.0000, 1.0000, 0.0000, 1.0000],
+                    
+                    "triangles": [0, 1, 2, 2, 3, 0],
+                    
+                    
+                    "weights": [0, 0, 1.00, 1, 0, 1.00, 2, 0, 1.00, 3, 0, 1.00],
+                    
+                    
+                    "vertices": [-64.00, -64.00, 64.00, -64.00, 64.00, 64.00, -64.00, 64.00],
+                    
+                    
+                    "slotPose": [0.00, 0.00, 0.0000, 0.0000, 1.0000, 1.0000],
+                    
+                    
+                    "bonePose": [0, 0.00, 0.00, 0.0000, 0.0000, 1.0000, 1.0000],
+                    "edges": [0, 1, 1, 2, 2, 3, 3, 1],
+                    "userEdges": []
+                }]
+            }]
+        }],
+        
+        "ik": [{
+            
+            "name": "ikName",
+            
+            "bone": "boneName",
+            
+            "target": "ikBoneName",
+            
+            
+            "bendPositive": true,
+            
+            
+            "chain": 0,
+            
+            "weight": 1.00
+        }],
+        
+        "animation": [{
+            
+            "name": "animationName",
+            
+            "playTimes": 1,
+            
+            "duration": 1,
+            
+            "frame": [{
+                
+                "duration": 1,
+                
+                "event": "eventName",
+                
+                "sound": "soundName",
+                
+                "actions": [
+                    
+                    ["gotoAndPlay", "animationName"],
+                    
+                    ["gotoAndStop", "animationName"]
+                ]
+            }],
+            
+            "bone": [{
+                
+                "name": "boneName",
+                
+                "scale": 1.00,
+                
+                "offset": 0.00,
+                
+                "frame": [{
+                    
+                    "duration": 1,
+                    
+                    "tweenEasing": 0.00,
+                    
+                    "curve": [0.00, 0.00, 1.00, 1.00],
+                    
+                    "event": "eventName",
+                    
+                    "sound": "soundName",
+                    
+                    "transform": {
+                        "x": 0.00, 
+                        "y": 0.00, 
+                        "skX": 0.0000, 
+                        "skY": 0.0000, 
+                        "scX": 1.0000, 
+                        "scY": 1.0000 
+                    }
+                }]
+            }],
+            
+            "slot": [{
+                
+                "name": "slotName",
+                
+                "frame": [{
+                    
+                    "duration": 1,
+                    
+                    "tween": 0.00,
+                    
+                    "curve": [0.00, 0.00, 1.00, 1.00],
+                    
+                    "displayIndex": 0,
+                    
+                    "color": {
+                        "aM": 100, 
+                        "rM": 100, 
+                        "gM": 100, 
+                        "bM": 100, 
+                        "aO": 0.00, 
+                        "rO": 0.00, 
+                        "gO": 0.00, 
+                        "bO": 0.00
+                    },
+                    
+                    "actions": [
+                        
+                        ["gotoAndPlay", "animationName"],
+                        
+                        ["gotoAndStop", "animationName"]
+                    ]
+                }]
+            }],
+            
+            "ffd": [{
+                
+                "name": "slotName",
+                
+                "frame": [{
+                    
+                    "duration": 1,
+                    
+                    "Easing": 0.00,
+                    
+                    "curve": [0.00, 0.00, 1.00, 1.00],
+                    
+                    "offset": 0,
+                    
+                    "vertices": [0.01, 0.01]
+                }]
+            }]
+        }]
+    }]
+}

@@ -1,0 +1,98 @@
+{
+  "name": "dataName"                // DB data name, different DB data files can have a skeleton with the same name, in this case, this field is used to distinguish the data corresponding the skeleton.
+  "version": "4.0"                  // DB version number
+  "frameRate": 24                   // DB animation frame rate
+  "isGlobal": 0                     //【optional properties】use absolute data or not, 0 by default (use relative data)
+  "armature": [{
+    "name": "armatureName"          // Skeleton name, one data file can have multiple skeleton
+    "userData":                     //【optional property】Custom data area, could be any type, empty by default
+    "bone": [{                      // All bone list of skeleton contains
+      "name": "boneName"            // bone name
+      "parent": "parentBoneName"    // Parent bone name
+      "userData":                   //【optional properties】Custom data area, could be any type, empty by default
+      "length": 0                   //【optional properties】bone length, 0 by default
+      "transform": {x, y, scX, scY, skX, skY}        // Bone’s properties parameters (optional properties)
+                                                     // x：X-axis coordinate offset,  y: Y-axis coordinate offset, 0 by default
+                                                     // scX:X-axis scaling value, scY:Y-axis scaling value, 1 by default
+                                                     // skX:X-axis rotation value，skY:Y-axis rotation value,  0 by default
+             }]
+    "slot": [{                      // Slot list of skeleton contains
+      "name": "slotName"            // Slot name
+      "parent": "parentBoneName"    // Slot-bound bone
+      "userData":                   //【optional properties】Custom data area, could be any type, empty by default
+      "displayIndex": 0             //【optional properties】The index of picture list of slot contained of the default picture in the slot, 0 by default.
+      "blendMode"=""                //Mixed mode, the default value is blank.
+             }]
+     "skin": [{                     // Skin list in the skeleton
+       "name": "skinName"           // Skin name, the default skin name is "", contains all shared slot of other skins
+       "slot": [{                   // Slot list included in the skin
+         "name": "slotName"         // slot name
+         "display": [{              // Display objects list owned in the slot
+           "name": "displayName"    // Display object name corresponding to the display object, including the relative path of the secondary directory.
+           "type": "image"          // Display object type, can be image (image), or sub skeleton (armature)
+                                    // Is able to freely expand based on different engines.
+           "transform": {x, y, scX, scY, skX, skY}   // Properties parameters of display object (optional properties)，
+                                                     // x：X-axis coordinate offset, y: Y-axis coordinate offset，0 by default
+                                                     // scX:X-axis scaling value, scY:Y-axis scaling value, 1 by default.
+                                                     // skX:X-axis rotation value, skY:Y-axis rotation value,   0 by default.
+                     }]
+                 }]
+             }]
+     "animation": [{                // Animation list in skeleton
+       "name": "animationName"      // animation name
+       "duration":0                 // Animation total frame number
+       "fadeInTime": 0              //【optional properties】fade-in time, 0 by default.
+       "scale": 1                   //【optional properties】The scaling of animation timeline, 1 by default, the larger the value the longer the play time  currently it’s not available in DB Pro.
+       "playTimes": 1               //【optional properties】Play time, 1 by default, 0 means infinite loop
+       "frame": [{                  // Key frame list that animation contains
+         "duration": 1              //【optional properties】Key frame’s continuous frame number, 1 by default.
+         "event":                   //【optional properties】Key frame includes event name, empty by default.
+         "sound":                   //【optional properties】Key frame includes sound name, empty by default.
+         "action":                  //【optional properties】Jump action name, empty by default
+                }]
+       "bone": [{                   // Bone list that animation contains (bone timeline list)
+         "name": "boneName"         // bone name
+         "scale": 1                 //【optional properties】Bone timeline scaling value, 1 by default (no scaling)
+         "offset": 0                //【optional properties】Bone timeline delay [0, 1], 0 by default
+                                    // For example, a loop running action has 4 seconds; and the action on the leg is set as 0.25
+                                    // Then the leg’s loop is one second ahead of the other bones.
+         "pX": 0                    //【optional properties】0 by default, represents the initial value of the skeleton pivot point in the animation
+                                    // This property only makes sense with the use of data corresponding to Parent
+                                    // If you use relatively global data, this value will be overwritten when the data is parsed.
+         "pY": 0                    //【optional properties】0 by default, represents the initial value of the skeleton pivot point in the animation
+                                    // This property only makes sense with the use of data corresponding to Parent
+                                    // If you use relatively global data, this value will be overwritten when the data is parsed.
+         "frame": [{                // Key frame list of bone timeline included
+           "duration": 1            //【optional properties】key frame’s continuous frame number, 1 by default.
+           "tweenEasing":0          //【optional properties】 It’s easing or not, NaN by default, no easing, 0: linear easing.
+           "tweenRotate":0          //【optional properties】Rotate clockwise or counterclockwise for a few rounds, and read from the tween animation. It has to be an integer, and 0 is the default value.
+           "event":                 //【optional properties】Key frame includes event name, empty by default
+           "sound":                 //【optional properties】Key frame includes sound name, empty by default
+           "transform": {x, y, scX, scY, skX, skY}   // The property parameters of this frame bone (optional property)
+                                                     // x：X-axis coordinate offset, y: Y-axis coordinate offset, 0 by default
+                                                     // scX:X-axis scaling value, scY:Y-axis scaling value, 1 by default.
+                                                     // skX:X-axis rotation value, skY:Y-axis rotation value, 0 bye default.
+                   }]
+               }]
+       "slot": [{                   // Slot list of animation contains (slot timeline list)
+         "name": "slotName"         // slot name
+         "scale": 1                 //【optional properties】slot’s scaling value, 1 by default.
+         "offset": 0                //【optional properties】Action delay [0, 1]，0 by default.
+                                    // For example, a loop running action has 4 seconds; and the action on the leg is set as 0.25
+                                    // Then the leg’s loop is one second ahead of the other bones.
+         "frame": [{                // Key frame list of slot
+           "duration": 1            //【optional properties】key frame continuous frame number, 1 by default.
+           "displayIndex":0         //【optional properties】This frame displays picture index, 0 by default, -1 means no display.
+                                    // Corresponding to picture list index of slot of skin
+           "visible":1              //【optional properties】Slot is visible or not in this frame, 1 by default.
+           "zOrder": 0              //【optional properties】The level where the slot is, 0 by default.
+           "hide": 0                //【optional properties】hide or not, 0 by default (no hidden)
+           "tweenEasing":0          //【optional properties】 easing or not, NaN by default, no easing, 0: Linear easing.
+           "action":                //【optional properties】 the action of this frame execute, empty by default.
+           "color": {aM, rM, gM, bM, aO, rO, gO, bO} // Color overlay. All properties are optional property, and its default value is shown as follow:
+                                                     // The default value of aO,rO,gO,bO are 0, and the default value of aM,rM,gM,bM is 100.
+                  }]
+              }]
+          }]
+      }]
+}

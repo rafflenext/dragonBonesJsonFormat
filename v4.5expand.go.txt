@@ -1,0 +1,158 @@
+package main
+
+type Foo struct {
+	Armature  []Foo_sub18 `json:"armature"`
+	FrameRate int64       `json:"frameRate"`
+	IsGlobal  int64       `json:"isGlobal"`
+	Name      string      `json:"name"`
+	Version   string      `json:"version"`
+}
+
+type Foo_sub7 struct {
+	AM int64 `json:"aM"`
+	AO int64 `json:"aO"`
+	BM int64 `json:"bM"`
+	BO int64 `json:"bO"`
+	GM int64 `json:"gM"`
+	GO int64 `json:"gO"`
+	RM int64 `json:"rM"`
+	RO int64 `json:"rO"`
+}
+
+type Foo_sub17 struct {
+	Actions      [][]string  `json:"actions"`
+	BlendMode    interface{} `json:"blendMode"`
+	Color        Foo_sub7    `json:"color"`
+	DisplayIndex int64       `json:"displayIndex"`
+	Name         string      `json:"name"`
+	Parent       string      `json:"parent"`
+	UserData     interface{} `json:"userData"`
+}
+
+type Foo_sub8 struct {
+	Actions      [][]string `json:"actions"`
+	Color        Foo_sub7   `json:"color"`
+	Curve        []int64    `json:"curve"`
+	DisplayIndex int64      `json:"displayIndex"`
+	Duration     int64      `json:"duration"`
+	Tween        int64      `json:"tween"`
+}
+
+type Foo_sub6 struct {
+	Actions  [][]string `json:"actions"`
+	Duration int64      `json:"duration"`
+	Event    string     `json:"event"`
+	Sound    string     `json:"sound"`
+}
+
+type Foo_sub18 struct {
+	Animation      []Foo_sub10 `json:"animation"`
+	Bone           []Foo_sub11 `json:"bone"`
+	DefaultActions [][]string  `json:"defaultActions"`
+	FrameRate      int64       `json:"frameRate"`
+	Ik             []Foo_sub12 `json:"ik"`
+	Name           string      `json:"name"`
+	Skin           []Foo_sub16 `json:"skin"`
+	Slot           []Foo_sub17 `json:"slot"`
+	Type           string      `json:"type"`
+	UserData       interface{} `json:"userData"`
+}
+
+type Foo_sub12 struct {
+	BendPositive bool   `json:"bendPositive"`
+	Bone         string `json:"bone"`
+	Chain        int64  `json:"chain"`
+	Name         string `json:"name"`
+	Target       string `json:"target"`
+	Weight       int64  `json:"weight"`
+}
+
+type Foo_sub10 struct {
+	Bone      []Foo_sub3 `json:"bone"`
+	Duration  int64      `json:"duration"`
+	Ffd       []Foo_sub5 `json:"ffd"`
+	Frame     []Foo_sub6 `json:"frame"`
+	Name      string     `json:"name"`
+	PlayTimes int64      `json:"playTimes"`
+	Slot      []Foo_sub9 `json:"slot"`
+}
+
+type Foo_sub14 struct {
+	BonePose  []int64       `json:"bonePose"`
+	Edges     []int64       `json:"edges"`
+	Name      string        `json:"name"`
+	Pivot     Foo_sub13     `json:"pivot"`
+	SlotPose  []int64       `json:"slotPose"`
+	Transform Foo_sub1      `json:"transform"`
+	Triangles []int64       `json:"triangles"`
+	Type      string        `json:"type"`
+	UserEdges []interface{} `json:"userEdges"`
+	Uvs       []int64       `json:"uvs"`
+	Vertices  []int64       `json:"vertices"`
+	Weights   []int64       `json:"weights"`
+}
+
+type Foo_sub2 struct {
+	Curve       []int64  `json:"curve"`
+	Duration    int64    `json:"duration"`
+	Event       string   `json:"event"`
+	Sound       string   `json:"sound"`
+	Transform   Foo_sub1 `json:"transform"`
+	TweenEasing int64    `json:"tweenEasing"`
+}
+
+type Foo_sub15 struct {
+	Display []Foo_sub14 `json:"display"`
+	Name    string      `json:"name"`
+}
+
+type Foo_sub4 struct {
+	Easing   int64     `json:"Easing"`
+	Curve    []int64   `json:"curve"`
+	Duration int64     `json:"duration"`
+	Offset   int64     `json:"offset"`
+	Vertices []float64 `json:"vertices"`
+}
+
+type Foo_sub3 struct {
+	Frame  []Foo_sub2 `json:"frame"`
+	Name   string     `json:"name"`
+	Offset int64      `json:"offset"`
+	Scale  int64      `json:"scale"`
+}
+
+type Foo_sub5 struct {
+	Frame []Foo_sub4 `json:"frame"`
+	Name  string     `json:"name"`
+}
+
+type Foo_sub9 struct {
+	Frame []Foo_sub8 `json:"frame"`
+	Name  string     `json:"name"`
+}
+
+type Foo_sub11 struct {
+	Name      string      `json:"name"`
+	Parent    string      `json:"parent"`
+	Transform Foo_sub1    `json:"transform"`
+	UserData  interface{} `json:"userData"`
+}
+
+type Foo_sub16 struct {
+	Name string      `json:"name"`
+	Slot []Foo_sub15 `json:"slot"`
+}
+
+type Foo_sub1 struct {
+	ScX int64 `json:"scX"`
+	ScY int64 `json:"scY"`
+	SkX int64 `json:"skX"`
+	SkY int64 `json:"skY"`
+	X   int64 `json:"x"`
+	Y   int64 `json:"y"`
+}
+
+type Foo_sub13 struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}

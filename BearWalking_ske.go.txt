@@ -1,0 +1,78 @@
+package main
+
+type Foo struct {
+	Armature          []Foo_sub10 `json:"armature"`
+	CompatibleVersion string      `json:"compatibleVersion"`
+	FrameRate         int64       `json:"frameRate"`
+	Info              string      `json:"info"`
+	Name              string      `json:"name"`
+	Version           string      `json:"version"`
+}
+
+type Foo_sub10 struct {
+	Aabb           Foo_sub1      `json:"aabb"`
+	Animation      []interface{} `json:"animation"`
+	Bone           []Foo_sub3    `json:"bone"`
+	DefaultActions []Foo_sub4    `json:"defaultActions"`
+	FrameRate      int64         `json:"frameRate"`
+	Ik             []interface{} `json:"ik"`
+	Name           string        `json:"name"`
+	Skin           []Foo_sub8    `json:"skin"`
+	Slot           []Foo_sub9    `json:"slot"`
+	Type           string        `json:"type"`
+}
+
+type Foo_sub7 struct {
+	Display []Foo_sub6 `json:"display"`
+	Name    string     `json:"name"`
+}
+
+type Foo_sub4 struct {
+	GotoAndPlay string `json:"gotoAndPlay"`
+}
+
+type Foo_sub1 struct {
+	Height int64 `json:"height"`
+	Width  int64 `json:"width"`
+	X      int64 `json:"x"`
+	Y      int64 `json:"y"`
+}
+
+type Foo_sub3 struct {
+	Length    int64    `json:"length"`
+	Name      string   `json:"name"`
+	Parent    string   `json:"parent"`
+	Transform Foo_sub2 `json:"transform"`
+}
+
+type Foo_sub9 struct {
+	Name   string `json:"name"`
+	Parent string `json:"parent"`
+}
+
+type Foo_sub6 struct {
+	Name      string   `json:"name"`
+	Transform Foo_sub5 `json:"transform"`
+}
+
+type Foo_sub5 struct {
+	ScX float64 `json:"scX"`
+	ScY float64 `json:"scY"`
+	SkX float64 `json:"skX"`
+	SkY float64 `json:"skY"`
+	X   float64 `json:"x"`
+	Y   float64 `json:"y"`
+}
+
+type Foo_sub2 struct {
+	ScX int64   `json:"scX"`
+	ScY int64   `json:"scY"`
+	SkX float64 `json:"skX"`
+	SkY float64 `json:"skY"`
+	X   float64 `json:"x"`
+	Y   float64 `json:"y"`
+}
+
+type Foo_sub8 struct {
+	Slot []Foo_sub7 `json:"slot"`
+}

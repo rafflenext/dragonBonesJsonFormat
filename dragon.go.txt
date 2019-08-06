@@ -1,0 +1,108 @@
+package main
+
+type Foo struct {
+	Armature []struct {
+		Aabb struct {
+			Height float64 `json:"height"`
+			Width  float64 `json:"width"`
+			X      float64 `json:"x"`
+			Y      float64 `json:"y"`
+		} `json:"aabb"`
+		Animation []struct {
+			Bone []struct {
+				Name        string `json:"name"`
+				RotateFrame []struct {
+					Clockwise   int64   `json:"clockwise"`
+					Duration    int64   `json:"duration"`
+					Rotate      float64 `json:"rotate"`
+					TweenEasing int64   `json:"tweenEasing"`
+				} `json:"rotateFrame"`
+				ScaleFrame []struct {
+					Duration    int64   `json:"duration"`
+					TweenEasing int64   `json:"tweenEasing"`
+					X           float64 `json:"x"`
+					Y           float64 `json:"y"`
+				} `json:"scaleFrame"`
+				TranslateFrame []struct {
+					Duration    int64   `json:"duration"`
+					TweenEasing int64   `json:"tweenEasing"`
+					X           float64 `json:"x"`
+					Y           float64 `json:"y"`
+				} `json:"translateFrame"`
+			} `json:"bone"`
+			Duration   int64   `json:"duration"`
+			FadeInTime float64 `json:"fadeInTime"`
+			Frame      []struct {
+				Duration int64 `json:"duration"`
+				Events   []struct {
+					Name string `json:"name"`
+				} `json:"events"`
+				Sound string `json:"sound"`
+			} `json:"frame"`
+			Name      string `json:"name"`
+			PlayTimes int64  `json:"playTimes"`
+			Slot      []struct {
+				ColorFrame []struct {
+					Duration    int64 `json:"duration"`
+					TweenEasing int64 `json:"tweenEasing"`
+					Value       struct {
+						AM int64 `json:"aM"`
+					} `json:"value"`
+				} `json:"colorFrame"`
+				DisplayFrame []struct {
+					Duration int64 `json:"duration"`
+					Value    int64 `json:"value"`
+				} `json:"displayFrame"`
+				Name string `json:"name"`
+			} `json:"slot"`
+		} `json:"animation"`
+		Bone []struct {
+			InheritRotation bool   `json:"inheritRotation"`
+			InheritScale    bool   `json:"inheritScale"`
+			Length          int64  `json:"length"`
+			Name            string `json:"name"`
+			Parent          string `json:"parent"`
+			Transform       struct {
+				ScX float64 `json:"scX"`
+				ScY float64 `json:"scY"`
+				SkX float64 `json:"skX"`
+				SkY float64 `json:"skY"`
+				X   int64   `json:"x"`
+				Y   int64   `json:"y"`
+			} `json:"transform"`
+		} `json:"bone"`
+		DefaultActions []struct {
+			GotoAndPlay string `json:"gotoAndPlay"`
+		} `json:"defaultActions"`
+		FrameRate int64  `json:"frameRate"`
+		Name      string `json:"name"`
+		Skin      []struct {
+			Name string `json:"name"`
+			Slot []struct {
+				Display []struct {
+					Name      string `json:"name"`
+					Transform struct {
+						ScX float64 `json:"scX"`
+						ScY float64 `json:"scY"`
+						SkX float64 `json:"skX"`
+						SkY float64 `json:"skY"`
+						X   float64 `json:"x"`
+						Y   float64 `json:"y"`
+					} `json:"transform"`
+					Type string `json:"type"`
+				} `json:"display"`
+				Name string `json:"name"`
+			} `json:"slot"`
+		} `json:"skin"`
+		Slot []struct {
+			DisplayIndex int64  `json:"displayIndex"`
+			Name         string `json:"name"`
+			Parent       string `json:"parent"`
+		} `json:"slot"`
+		Type string `json:"type"`
+	} `json:"armature"`
+	CompatibleVersion string `json:"compatibleVersion"`
+	FrameRate         int64  `json:"frameRate"`
+	Name              string `json:"name"`
+	Version           string `json:"version"`
+}
